@@ -1,22 +1,31 @@
-let diameter= 0
-let area= 0
-let circumference = 0
-let radius = 0
-let result = 0
-let answer = 0
-let square = 0
-
-document.getElementById('button').addEventListener('click', funk)
-
-function funk () {
-	diameter = document.getElementById('D').value
-	diameter = parseInt(diameter)
-  circumference = diameter * Math.PI
-	document.getElementById('c-1').innerHTML = circumference 
-  radius = diameter / 2
-  result = radius * radius
-  answer = Math.PI * result
-  document.getElementById('a-1').innerHTML
-	square = document.getElementById('a-1').innerHTML
-	document.getElementById('a-1').innerHTML = answer + '<sup>2</sup>'
+// setup standard variables
+let d = 0
+let r = 0
+let a = 0
+let c = 0
+const pi = 3.14159
+// event listener for the button to start the checker
+document.getElementById('button').addEventListener('click', checker)
+// functions
+// checks if the input is above or below 0 if its below it will show an error mesage if its above it will trigger the calculate function
+function checker () {
+  d = document.getElementById('input').value
+  d = parseInt(d)
+  if (d <= 0) {
+    alert('error:the inputed diameter must be above 0')
+  }
+  if (d > 0) {
+    calculate()
+  }
+}
+// calculates the Area, Circumference and Radius and displays them
+function calculate () {
+  d = document.getElementById('input').value
+  d = parseInt(d)
+  r = d / 2
+  document.getElementById('out3').innerHTML = r
+  a = pi * r ** 2
+  document.getElementById('out1').innerHTML = a
+  c = 2 * pi * r
+  document.getElementById('out2').innerHTML = c
 }
