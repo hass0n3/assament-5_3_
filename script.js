@@ -1,5 +1,5 @@
-let diameter = 0
-let area = 0
+let diameter= 0
+let area= 0
 let circumference = 0
 let radius = 0
 let result = 0
